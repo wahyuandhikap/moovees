@@ -24,7 +24,7 @@ class ProfilePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Icon(
-              Icons.account_circle,
+              FontAwesomeIcons.circleUser,
               size: getProportionateScreenWidth(120),
               color: Colors.blueGrey,
             ),

@@ -50,7 +50,7 @@ class _MainPageState extends State<MainPage> {
           activeColor: Colors.deepOrange,
         ),
         DBottomNavigationBarItem(
-          icon: Icons.person,
+          icon: FontAwesomeIcons.user,
           title: Text('Profile'),
           activeColor: Colors.deepOrange,
           iconPosition: MainAxisAlignment.center,
