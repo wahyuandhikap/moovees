@@ -34,6 +34,29 @@ class MoviePage extends StatelessWidget {
                     SizedBox(
                       height: getProportionateScreenHeight(15),
                     ),
+                    _titleText("Popular Movies"),
+                    SizedBox(
+                      height: getProportionateScreenHeight(15),
+                    ),
+                    MovieHorizontalList(
+                      movies: state.popularMovies?.results,
+                      isEmpty: state.popularMovies?.results?.isEmpty ?? true,
+                      isLoading: state.responseState is ResLoading,
+                      movieType: MovieType.popular,
+                      cardWidth: 200,
+                      cardHeight: 300,
+                      useTitleBackground: true,
+                      onPressedItem: (movieId) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    MovieDetailPage(movieId: movieId)));
+                      },
+                    ),
+                    SizedBox(
+                      height: getProportionateScreenHeight(20),
+                    ),
                     _titleText("Now Playing"),
                     SizedBox(
                       height: getProportionateScreenHeight(15),
@@ -68,29 +91,6 @@ class MoviePage extends StatelessWidget {
                       isLoading: state.responseState is ResLoading,
                       movieType: MovieType.upcoming,
                       cardWidth: 300,
-                      useTitleBackground: true,
-                      onPressedItem: (movieId) {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    MovieDetailPage(movieId: movieId)));
-                      },
-                    ),
-                    SizedBox(
-                      height: getProportionateScreenHeight(20),
-                    ),
-                    _titleText("Popular Movies"),
-                    SizedBox(
-                      height: getProportionateScreenHeight(15),
-                    ),
-                    MovieHorizontalList(
-                      movies: state.popularMovies?.results,
-                      isEmpty: state.popularMovies?.results?.isEmpty ?? true,
-                      isLoading: state.responseState is ResLoading,
-                      movieType: MovieType.popular,
-                      cardWidth: 200,
-                      cardHeight: 300,
                       useTitleBackground: true,
                       onPressedItem: (movieId) {
                         Navigator.push(
