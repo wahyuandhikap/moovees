@@ -24,7 +24,7 @@ class ProfilePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Icon(
-              FontAwesomeIcons.circleUser,
+              FontAwesomeIcons.solidCircleUser,
               size: getProportionateScreenWidth(120),
               color: Colors.blueGrey,
             ),
@@ -142,7 +142,7 @@ class ProfilePage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Icon(
-                        FontAwesomeIcons.comment,
+                        FontAwesomeIcons.solidCommentDots,
                         size: getProportionateScreenWidth(80),
                         color: Colors.deepOrange,
                       ),

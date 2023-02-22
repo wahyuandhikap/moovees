@@ -32,6 +32,27 @@ class TvPage extends StatelessWidget {
                   SizedBox(
                     height: getProportionateScreenHeight(15),
                   ),
+                  _titleText("Popular TV Shows"),
+                  SizedBox(
+                    height: getProportionateScreenHeight(15),
+                  ),
+                  TvHorizontalList(
+                    tv: state.popularTv?.results,
+                    isEmpty: state.onTheAirTv?.results?.isEmpty ?? true,
+                    isLoading: state.responseState is ResLoading,
+                    tvType: TvType.popular,
+                    cardWidth: 300,
+                    useTitleBackground: true,
+                    onPressedItem: (tvId) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => TvDetailPage(tvId: tvId)));
+                    },
+                  ),
+                  SizedBox(
+                    height: getProportionateScreenHeight(20),
+                  ),
                   _titleText("On The Air"),
                   SizedBox(
                     height: getProportionateScreenHeight(15),
@@ -52,27 +73,6 @@ class TvPage extends StatelessWidget {
                                 builder: (context) =>
                                     TvDetailPage(tvId: tvId)));
                       }),
-                  SizedBox(
-                    height: getProportionateScreenHeight(20),
-                  ),
-                  _titleText("Popular TV Shows"),
-                  SizedBox(
-                    height: getProportionateScreenHeight(15),
-                  ),
-                  TvHorizontalList(
-                    tv: state.popularTv?.results,
-                    isEmpty: state.onTheAirTv?.results?.isEmpty ?? true,
-                    isLoading: state.responseState is ResLoading,
-                    tvType: TvType.popular,
-                    cardWidth: 300,
-                    useTitleBackground: true,
-                    onPressedItem: (tvId) {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => TvDetailPage(tvId: tvId)));
-                    },
-                  ),
                 ],
               ),
             ),
